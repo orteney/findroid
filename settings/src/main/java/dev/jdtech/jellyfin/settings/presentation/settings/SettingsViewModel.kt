@@ -95,16 +95,13 @@ class SettingsViewModel @Inject constructor(private val appPreferences: AppPrefe
                                                     optionValues = R.array.languages_values,
                                                     optionsIncludeNull = true,
                                                 ),
-                                                PreferenceSelect(
-                                                    nameStringResource =
-                                                        R.string
-                                                            .settings_preferred_subtitle_language,
+                                                PreferenceMultiSelect(
+                                                    nameStringResource = R.string
+                                                        .settings_preferred_subtitle_language,
                                                     iconDrawableId = R.drawable.ic_closed_caption,
-                                                    backendPreference =
-                                                        appPreferences.preferredSubtitleLanguage,
+                                                    backendPreference = appPreferences.preferredSubtitleLanguages,
                                                     options = R.array.languages,
                                                     optionValues = R.array.languages_values,
-                                                    optionsIncludeNull = true,
                                                 ),
                                             )
                                     ),

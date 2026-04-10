@@ -127,8 +127,11 @@ constructor(
                 .setPreferredAudioLanguage(
                     appPreferences.getValue(appPreferences.preferredAudioLanguage)
                 )
-                .setPreferredTextLanguage(
-                    appPreferences.getValue(appPreferences.preferredSubtitleLanguage)
+                .setPreferredTextLanguages(
+                    *(appPreferences.getValue(appPreferences.preferredSubtitleLanguages).toTypedArray().ifEmpty {
+                        appPreferences.getValue(appPreferences.preferredSubtitleLanguage)?.let { arrayOf(it) }
+                            ?: arrayOf()
+                    })
                 )
         )
 
