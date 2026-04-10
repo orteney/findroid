@@ -15,6 +15,7 @@ class AppPreferences @Inject constructor(val sharedPreferences: SharedPreference
     // Language
     val preferredAudioLanguage = Preference<String?>("pref_audio_language", null)
     val preferredSubtitleLanguage = Preference<String?>("pref_subtitle_language", null)
+    val preferredSubtitleLanguages = Preference<Set<String>>("pref_subtitle_language", emptySet())
 
     // Interface
     val theme = Preference("pref_theme", "system")
