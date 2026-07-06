@@ -56,6 +56,7 @@ fun ItemCard(
                         Modifier.align(Alignment.TopEnd).padding(MaterialTheme.spacings.small),
                     horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacings.small),
                 ) {
+                    if (item.favorite) FavoriteBadge()
                     if (item.isDownloaded()) DownloadedBadge()
                     if (item.played) PlayedBadge()
                     item.unplayedItemCount?.takeIf { it > 0 }?.let { ItemCountBadge(it) }
