@@ -21,7 +21,7 @@ enum class Direction {
 @Composable
 fun ItemPoster(item: FindroidItem, direction: Direction, modifier: Modifier = Modifier) {
     val context = LocalContext.current
-    var imageUri = item.images.primary
+    var imageUri = item.images.primary ?: item.images.showPrimary
 
     when (direction) {
         Direction.HORIZONTAL -> {

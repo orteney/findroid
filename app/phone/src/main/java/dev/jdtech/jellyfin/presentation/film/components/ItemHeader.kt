@@ -39,7 +39,7 @@ fun ItemHeader(
     var backdropUri =
         when (item) {
             is FindroidEpisode -> item.images.primary
-            else -> item.images.backdrop
+            else -> item.images.backdrop ?: item.images.primary
         }
 
     // Ugly workaround to append the files directory when loading local images
